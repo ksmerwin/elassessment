@@ -17,4 +17,5 @@ quasar dev
 ### Process for starting - kevin ##
 
 npm install
+
 npm run dev
