@@ -15,7 +15,6 @@
       Explore Learning Assessment
     </div>
     <q-page-container>
-      <IconContainer />
       <router-view />
     </q-page-container>
   </q-layout>
@@ -23,13 +22,17 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import IconContainer from "../components/IconContainer.vue";
 export default defineComponent({
   name: "MainLayout",
 
-  components: { IconContainer },
   created() {
     this.$q.screen.setSizes({ sm: 200, md: 500, lg: 1000, xl: 2000 });
   },
 });
 </script>
+
+<style>
+.q-layout {
+  height: 50px;
+}
+</style>
