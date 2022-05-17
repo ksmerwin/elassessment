@@ -3,7 +3,10 @@
     <draggable
       v-model="icons"
       @start="drag = true"
+      @contextmenu="preventMenu"
       :delay="1000"
+      :forceFallback="true"
+      :fallbackTolerance="3"
       @end="drag = false"
       class="row"
       :class="$q.screen.sm || $q.screen.xs ? 'justify-center q-mx-none' : ''"
@@ -37,7 +40,6 @@
 
 <script>
 import { VueDraggableNext } from "vue-draggable-next";
-console.log(VueDraggableNext);
 export default {
   name: "IconContainer",
   components: {
@@ -70,7 +72,11 @@ export default {
       ],
     };
   },
-
+  methods: {
+    preventMenu(e) {
+      e.preventDefault();
+    },
+  },
   computed: {},
 };
 </script>
